@@ -106,6 +106,10 @@ class SignaturePad extends Component {
 
   _renderLoading = args => {}
 
+  _onMessage = event => {
+    this._bridged_finishedStroke(JSON.parse(event.nativeEvent.data))
+  }
+
   render() {
     return (
       <WebView
@@ -116,6 +120,7 @@ class SignaturePad extends Component {
         source={this.source}
         javaScriptEnabled={true}
         style={this.props.style}
+        onMessage={this._onMessage}
       />
     )
   }
