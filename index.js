@@ -114,6 +114,7 @@ class SignaturePad extends Component {
     return (
       <WebView
         automaticallyAdjustContentInsets={false}
+        scrollEnabled={false}
         onNavigationStateChange={this._onNavigationChange}
         renderError={this._renderError}
         renderLoading={this._renderLoading}
